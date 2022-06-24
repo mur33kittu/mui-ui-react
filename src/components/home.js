@@ -7,6 +7,7 @@ import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { Container } from '@mui/material';
+import LoadingButton from './progress';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,19 +54,20 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 const Home = (props) => {
-  const [showArticles, setShowArticles] = useState([]);
+  const [loading, setLoading] = useState(false);
   function getInfo(event) {
     if (event.key === "Enter") {
+      setLoading(true);
       event.preventDefault();
       props.setSearchString(event.target.value);
       props.getSearchResults(event.target.value);
-      setShowArticles(props?.data?.everything?.everything?.articles);
+      setLoading(false);
     }
   }
 
   return (
     <Container>
-      <br /><br /><br /><br /><br /><br />
+      <br /><br /><br />
       <Search>
         <SearchIconWrapper>
           <SearchIcon />
@@ -76,6 +78,7 @@ const Home = (props) => {
           onKeyDown={e => getInfo(e)}
         />
       </Search>
+      <LoadingButton loading={loading} done={loading} />
       <News />
     </Container>
   );

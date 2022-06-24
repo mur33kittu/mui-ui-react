@@ -6,10 +6,19 @@ import * as actions from '../actions';
 import NewsCard from './card';
 
 function News(props) {
-    const articles = props?.data?.headlines?.articles;
+    const [showArticles, setShowArticles] = useState([]);
+    useEffect(() => {
+        setShowArticles(props?.headlines?.headlines?.articles)
+    }, [props?.headlines?.headlines?.articles]);
+    
+
+    useEffect(() => {
+        setShowArticles(props?.everything?.everything?.articles);
+    }, [props?.everything?.everything?.articles])
+
     return (
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            {articles?.map((article, i) => (
+            {showArticles?.map((article, i) => (
                 <Grid item xs={4}>
                     <NewsCard {...article} key={i} />
                 </Grid>
@@ -22,7 +31,7 @@ function News(props) {
 
 
 function mapStateToProps(state) {
-    return { data: state.headlines };
+    return { headlines: state.headlines, everything: state.everything };
 }
 
 export default connect(mapStateToProps, actions)(News);
