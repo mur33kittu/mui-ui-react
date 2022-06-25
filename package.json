@@ -1,8 +1,12 @@
 {
-  "name": "inspire",
+  "name": "mui-ui-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-cdk/aws-cloudfront": "^1.161.0",
+    "@aws-cdk/aws-iam": "^1.161.0",
+    "@aws-cdk/aws-s3-deployment": "^1.161.0",
+    "@aws-cdk/core": "^1.161.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
@@ -19,13 +23,33 @@
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.0",
+    "source-map-support": "^0.5.16",
     "styled-components": "^5.3.5",
     "web-vitals": "^1.1.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^26.6.0",
+    "@mui/styles": "^5.8.4",
+    "@types/aws-lambda": "^8.10.101",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.5.2",
+    "@types/node": "14.14.33",
+    "@types/prettier": "2.6.0",
+    "aws-cdk": "2.29.0",
+    "jest": "26.6.0",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.8.1",
+    "typescript": "~3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "jest",
+    "cdk": "cdk synth",
+    "deploy": "npm run build && npm run cdk && cdk deploy",
+    "justdeploy": "npm run cdk && cdk deploy",
+    "destroy": "cdk destroy"
   },
   "eslintConfig": {
     "extends": [
@@ -44,8 +68,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@mui/styles": "^5.8.4"
   }
 }
