@@ -8,7 +8,7 @@ import NewsCard from './card';
 function News(props) {
     const [showArticles, setShowArticles] = useState([]);
     useEffect(() => {
-        setShowArticles(props?.headlines?.headlines?.articles)
+        setShowArticles(props?.headlines?.headlines?.articles);
     }, [props?.headlines?.headlines?.articles]);
     
 

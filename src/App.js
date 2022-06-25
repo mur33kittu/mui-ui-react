@@ -7,7 +7,6 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import ResponsiveAppBar from './components/navBar';
-import Home from './components/home';
 import Footer from './components/footer';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         <Typography variant="h4" component="h1" gutterBottom>
           <BrowserRouter>
             <ResponsiveAppBar />
-            <Home />
             <Routes />
             <Footer />
           </BrowserRouter>

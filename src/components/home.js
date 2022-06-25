@@ -76,6 +76,7 @@ const Home = (props) => {
           placeholder="Search…"
           inputProps={{ 'aria-label': 'search' }}
           onKeyDown={e => getInfo(e)}
+          autoFocus
         />
       </Search>
       <LoadingButton loading={loading} done={loading} />

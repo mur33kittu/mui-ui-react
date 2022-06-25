@@ -10,9 +10,6 @@ import { MenuItem } from '@mui/material';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-
-
-
 const extractHeadlines = (headlines) => {
     return [...new Set(headlines?.articles.map(headline => headline.source.name))]
 }
