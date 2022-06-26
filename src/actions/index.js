@@ -6,7 +6,7 @@ import {
 
 export function getHeadLines (input) {
   return async function (dispatch) {
-    const api = await fetch (`https://2soehekin9.execute-api.us-east-1.amazonaws.com/dev/headlines/${input}`);
+    const api = await fetch (`https://bq9on6ogk9.execute-api.us-east-1.amazonaws.com/dev/headlines/${input}`);
     const headlines = await api.json ();
     dispatch ({
       type: GET_HEADLINES,
@@ -27,7 +27,7 @@ export function setSearchString (input) {
 
 export function getSearchResults (input) {
   return async function (dispatch) {
-    const api = await fetch (`https://2soehekin9.execute-api.us-east-1.amazonaws.com/dev/everything/${input}`);
+    const api = await fetch (`https://bq9on6ogk9.execute-api.us-east-1.amazonaws.com/dev/everything/${input}`);
     const data = await api.json ();
     dispatch ({
       type: GET_EVERYTHING,

@@ -32,12 +32,9 @@
     "@mui/styles": "^5.8.4",
     "@types/aws-lambda": "^8.10.101",
     "@types/fs-extra": "^9.0.13",
-    "@types/jest": "^27.5.2",
     "@types/node": "14.14.33",
     "@types/prettier": "2.6.0",
     "aws-cdk": "2.29.0",
-    "jest": "26.6.0",
-    "ts-jest": "^27.1.4",
     "ts-node": "^10.8.1",
     "typescript": "~3.9.7"
   },
